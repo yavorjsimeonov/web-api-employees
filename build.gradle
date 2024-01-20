@@ -30,11 +30,9 @@ dependencies {
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.13.0'
     implementation group: 'org.slf4j', name: 'slf4j-reload4j', version: '2.0.9'
 
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
 
-    //implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
-//    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
-//    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+
 
     implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.3.0'
 
@@ -44,6 +42,14 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.testcontainers:junit-jupiter:1.19.3'
+    testImplementation 'org.testcontainers:mysql'
 }
 
 configurations {

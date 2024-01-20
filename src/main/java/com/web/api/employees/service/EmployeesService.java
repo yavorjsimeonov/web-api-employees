@@ -41,4 +41,24 @@ public class EmployeesService {
     return jdbcDatabaseRepository.deleteEmployeeById(id);
   }
 
+  public int addEmployee(Employee employee){
+    if (employee.id == null || employee.firstName == null || employee.lastName == null || employee.email == null) {
+      throw new IllegalArgumentException("Illegal argument. Arguments can't be null");
+    }
+
+    if(getEmployeeById(employee.id) != null){
+      throw new IllegalArgumentException("Such employee already exists.");
+    }
+
+    return jdbcDatabaseRepository.addEmployee(employee.id, employee.firstName, employee.lastName, employee.email);
+  }
+
+  public int updateEmployee(Employee employee){
+    if (employee.id == null || employee.firstName == null || employee.lastName == null || employee.email == null) {
+      throw new IllegalArgumentException("Illegal argument. Arguments can't be null");
+    }
+
+    return jdbcDatabaseRepository.updateEmployee(employee.id, employee.firstName, employee.lastName, employee.email);
+  }
+
 }

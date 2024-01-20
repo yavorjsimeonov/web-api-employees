@@ -35,8 +35,17 @@ public class EmployeesRestController {
 
   @DeleteMapping("/employees/{id}")
   public int deleteEmployeeById(@PathVariable String id){
-    System.out.println("receivedId: " + id);
     return employeesService.deleteEmployeeById(id);
+  }
+
+  @PostMapping("/employees")
+  public int addEmployee(@RequestBody Employee employee){
+    return employeesService.addEmployee(employee);
+  }
+
+  @PutMapping("/employees")
+  public int updateEmployee(@RequestBody Employee employee){
+    return employeesService.updateEmployee(employee);
   }
 
 }

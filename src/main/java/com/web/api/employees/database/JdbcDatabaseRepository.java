@@ -35,4 +35,20 @@ public class JdbcDatabaseRepository implements DatabaseRepository {
     return jdbcTemplate.update(sql, new Object[]{employeeId});
   }
 
+  @Override
+  public int addEmployee(String employeeId, String firstName, String lastName, String email) {
+
+    String sql = "insert into employee (id, first_name, last_name, email) values(?, ?, ?, ?)";
+
+    return jdbcTemplate.update(sql, new Object[]{employeeId, firstName, lastName, email});
+  }
+
+  @Override
+  public int updateEmployee(String employeeId, String firstName, String lastName, String email) {
+
+    String sql = "update employee set first_name = ?, last_name = ?, email = ? where id = ?";
+
+    return jdbcTemplate.update(sql, new Object[]{firstName, lastName, email, employeeId});
+  }
+
 }

@@ -10,8 +10,6 @@ public class Employee {
   public String firstName;
   public String lastName;
   public String email;
-  public String position;
-  public Map<String, Long> workedHoursPerDate = new HashMap<>();
 
 
   @Override
@@ -21,8 +19,6 @@ public class Employee {
         ", firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
         ", email='" + email + '\'' +
-        ", position='" + position + '\'' +
-        ", workedHoursPerDate=" + workedHoursPerDate +
         '}';
   }
 }

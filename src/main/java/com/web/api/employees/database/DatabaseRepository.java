@@ -11,4 +11,8 @@ public interface DatabaseRepository {
   List<Employee> getAllEmployees();
 
   int deleteEmployeeById(String id);
+
+  int addEmployee(String emloyeeId, String firstName, String lastName, String email);
+
+  int updateEmployee(String emloyeeId, String firstName, String lastName, String email);
 }
